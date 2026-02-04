@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from router import ejercicio1
+from router import ejercicio1, ejercicio2
 
 app = FastAPI()
 
@@ -19,3 +19,4 @@ async def root():
     return {"msg" : "Servidor"}
 
 app.include_router(ejercicio1.router)
+app.include_router(ejercicio2.router)
